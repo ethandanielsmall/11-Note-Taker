@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const html = require('./routes/htmlRoutes.js');
 
-const PORT = 3001;
+var PORT = 3001;
 
 const app = express();
 
