@@ -2,8 +2,6 @@ const express = require('express');
 const path = require('path');
 const html = require('./routes/htmlRoutes.js');
 
-var PORT = 3001;
-
 const app = express();
 
 // Middleware for parsing JSON and urlencoded form data
@@ -30,6 +28,7 @@ app.use((req, res) => {
   res.status(404).send('Page not found');
 });
 
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
-);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
